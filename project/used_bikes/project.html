@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Price</title>
+</head>
+<body>
+    <h1>Used Bike Price Prediction</h1>
+    <form method="POST" action="/predict">
+        Brand: <input type="text" name="brand_name" required><br>
+        Owner (1-3): <input type="number" name="owner" step="1" required><br>
+        KMs Driven: <input type="number" name="kms_driven" step="1" required><br>
+        Age: <input type="number" name="age" step="1" required><br>
+        Power (e.g., 13.4): <input type="number" name="power" step="0.1" required><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h2>Predicted Price: ₹{{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
